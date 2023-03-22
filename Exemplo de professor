@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+main() {
+ //Entrada: matriz[3][3], vetor[3]
+
+  int matriz[3][3], vetor[3];
+/*Poderia usar mais um for() para ler o valor do vetor, mas tbm posso aproveitar o primeiro for() para informar o valor do vetor. 
+Primeiro o valor da matriz que vai ser preenchido, o primeiro for() vai pedir os valores para o vetor.*/
+
+  for(int i=0; i<3; i++){ 
+    for(int j=0; j<3;j++){
+      printf("Matriz: ");
+      scanf("%d", &matriz[i][j]);
+    } //3X linhas
+
+    printf("Vetor: ");
+    scanf("%d", &vetor[i]);
+    printf("\n");
+  } //3X colunas
+
+  //2º Multiplica as colunas da matriz pelo vetor
+  for(int i=0; i<3; i++){ 
+    for(int j=0; j<3;j++){
+      matriz[i][j]= matriz[i][j]*vetor[i];
+      printf("\nValor (linha [%d] X coluna [%d]): %d", i, j, matriz[i][j]);
+    }
+  }
+}
